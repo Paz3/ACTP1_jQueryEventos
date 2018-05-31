@@ -43,12 +43,26 @@
 <body>
   <button class="add_name">+</button>
   <ul class="names">
-    <li>link 1</a></li>
-    <li>link 2</a></li>
-    <li>link 3</a></li>
+
 
 
   </ul>
+
+<script>
+
+$('.add_name').on('click', function() {
+  var data = prompt('Por favor agrega un nombre a la lista', 'Harry Potter');
+  $('.names').append('<li><span>'+data+'</span> <a href="#" class="remove_name">Eliminar</a></li>')
+});
+
+$('.names').on('click', 'a', function(event){
+  event.preventDefault();
+  $(this).parent().remove();
+});
+  
+ 
+
+</script>
 
 </body>
 </html>
